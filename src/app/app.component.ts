@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'UI';
+
+  cards = [];
+
+  addCard() {
+    this.cards.push({
+      title: 'Card Title',
+      description: 'Card Description',
+    });
+  }
+
+  deleteCard(index: number) {
+    this.cards.splice(index, 1);
+  }
 }
