@@ -1,11 +1,15 @@
-<button (click)="addCard()">Add Card</button>
+<header class="header">
+  <button (click)="addCard()">Add Card</button>
+</header>
 
-<div *ngFor="let card of cards; index as i">
-  <div class="card">
+<div class="cards-container">
+  <div *ngFor="let card of cards; index as i" class="card">
     <h2>{{ card.title }}</h2>
     <p>{{ card.description }}</p>
     <button (click)="deleteCard(i)">Delete</button>
   </div>
 </div>
 
-<router-outlet></router-outlet>
+<footer class="footer">
+  <button>Submit</button>
+</footer>

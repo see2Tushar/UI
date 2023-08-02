@@ -1,9 +1,40 @@
+.header {
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.cards-container {
+  padding-top: 60px; /* height of the header */
+  padding-bottom: 60px; /* height of the footer */
+  overflow-y: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
 .card {
   border: 1px solid black;
   margin: 10px;
   padding: 10px;
 }
 
-button {
-  margin: 10px;
+.footer {
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 1000;
+}
+
+.footer button, .header button {
+  padding: 10px 20px;
+  font-size: 16px;
 }
