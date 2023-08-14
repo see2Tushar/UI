@@ -4,26 +4,45 @@ import { GridOptions } from 'ag-grid-community';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'UI';
 
   public rowData: any[] = [
     { id: 1, name: 'John', age: 24 },
-    { id: 2, name: 'Doe', age: 26 }
+    { id: 2, name: 'Doe', age: 26 },
     // Make sure your data has unique 'id' for each entry
   ];
   public editedRows: any[] = [];
-
+  public gridOptions = {
+    singleClickEdit: true
+  };
   public columnDefs: any[] = [
-    { headerName: 'Name', field: 'name', editable: true },
-    { headerName: 'Age', field: 'age', editable: true }
+    {
+      headerName: 'Name',
+      field: 'name',
+      editable: true,
+      cellClass: 'editable-cell',
+      cellRenderer: 'agRichSelectCellRenderer',
+    },
+    { headerName: 'Age', field: 'age' },
+  ];
+
+  public column1Defs: any[] = [
+    {
+      headerName: 'Name',
+      field: 'name',
+      editable: false,
+    },
+    { headerName: 'Age', field: 'age' },
   ];
 
   onCellValueChanged(event: any) {
     if (event.newValue !== event.oldValue) {
-      const existingRow = this.editedRows.find(row => row.id === event.data.id);
+      const existingRow = this.editedRows.find(
+        (row) => row.id === event.data.id
+      );
 
       if (existingRow) {
         // Update the existing row data with new data

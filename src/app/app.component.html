@@ -4,6 +4,7 @@
   class="ag-theme-alpine"
   [rowData]="rowData"
   [columnDefs]="columnDefs"
+  [gridOptions]="gridOptions"
   (cellValueChanged)="onCellValueChanged($event)">
 </ag-grid-angular>
 
@@ -12,5 +13,5 @@
   style="width: 100%; height: 300px; margin-top: 20px;"
   class="ag-theme-alpine"
   [rowData]="editedRows"
-  [columnDefs]="columnDefs">
+  [columnDefs]="column1Defs">
 </ag-grid-angular>
